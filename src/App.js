@@ -1,6 +1,8 @@
 import { ColorModeContext, useMode } from "./theme";
-import { CssBaseline, ThemeProvider } from "@mui/material";
+import { Box, CssBaseline, ThemeProvider } from "@mui/material";
+import { useState, useMemo, createContext } from "react";
 import Topbar from "./scenes/global/Topbar";
+import Sidebar from "./scenes/global/Sidebar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./scenes/Dashboard/index";
 /*import Team from './scenes/Team';
@@ -22,27 +24,33 @@ function App() {
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <div className="App">
-          <main className="content">
-            <Topbar></Topbar>
+        <Box
+          className="App"
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            height: "100vh",
+            width: "100vw",
+          }}
+        >
+          <Sidebar />
+          <Box
+            className="content"
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              width: "100%",
+            }}
+          >
+            <Topbar />
             <Router>
               <Routes>
                 <Route path="/" element={<Dashboard />} />
-                {/* <Route path="/team" element={<Team />} />
-                  <Route path="/contacts" element={<Contacts />} />
-                  <Route path="/invoices" element={<Invoices />} />
-                  <Route path="/form" element={<Form />} />
-                  <Route path="/bar" element={<Bar />} /> 
-                  <Route path="/pie" element={<Pie />} />
-                  <Route path="/line" element={<Line />} />
-                  <Route path="/faq" element={<FAQ />} />
-                  <Route path="/geography" element={<Geography />} />
-                  <Route path="/geography" element={<Geography />} />
-                 */}
+                {/* Other routes */}
               </Routes>
             </Router>
-          </main>
-        </div>
+          </Box>
+        </Box>
       </ThemeProvider>
     </ColorModeContext.Provider>
   );

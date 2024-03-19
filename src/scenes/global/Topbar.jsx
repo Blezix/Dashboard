@@ -16,12 +16,18 @@ import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 
-function Topbar() {
+function Topbar(width, sx) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
   return (
-    <Box display="flex" justifyContent="space-between" p={2}>
+    <Box
+      width={width}
+      sx={{ ...sx }}
+      display="flex"
+      justifyContent="space-between"
+      p={2}
+    >
       <Box display="flex" bgcolor={colors.primary[400]} borderRadius="3px">
         <InputBase sx={{ ml: 2, flex: 1 }}></InputBase>
         <IconButton type="button" sx={{ p: 1 }}>

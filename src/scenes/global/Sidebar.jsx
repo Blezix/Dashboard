@@ -1,7 +1,15 @@
 import { useState } from "react";
-import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
-import "react-pro-sidebar/dist/css/styles.css";
-import { Box, IconButton, Typography, useTheme } from "@mui/material";
+import {
+  Box,
+  IconButton,
+  Typography,
+  useTheme,
+  Drawer,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+} from "@mui/material";
 import { Link } from "react-router-dom";
 import { tokens } from "../../theme";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
@@ -17,32 +25,264 @@ import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 
-function Sidebar() {
+function Sidebar(sx) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [collapsed, setCollapsed] = useState(false);
-  const [selected, setSelected] = useState("dashboard");
-  return (
+
+  const list = () => (
     <Box
       sx={{
-        "& .pro-sidebar-inner": {
-          backgroundColor: ` ${colors.primary[400]} !important`,
-          color: colors.neutral.light,
-        },
-        "& .pro-icon-wrapper": {
-          backgroundColor: `transparent !important`,
-        },
-        "& .pro-inner-item": {
-          padding: "5px 35px 5px 20px !important",
-        },
-        "& .pro-inner-item:hover": {
-          color: "#868dfb !important",
-        },
-        "& .pro-menu-item.actibe": {
-          color: "#868dfa !important",
-        },
+        width: collapsed ? 60 : 250,
+        backgroundColor: colors.primary[400],
+        color: colors.grey[100],
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        transition: "width 0.3s",
+        ...sx,
       }}
-    ></Box>
+    >
+      <List>
+        {collapsed ? (
+          // Begin collapsed content
+          <>
+            <Box>
+              <ListItem
+                button
+                key="menu"
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  height:"40px"
+                }}
+                onClick={() => setCollapsed(!collapsed)}
+              >
+                <MenuOutlinedIcon />
+              </ListItem>
+            </Box>
+            <Box
+              sx={{
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <ListItem
+                button
+                key="menu"
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <HomeOutlinedIcon />
+              </ListItem>
+              <ListItem
+                button
+                key="menu"
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <HomeOutlinedIcon />
+              </ListItem>
+              <ListItem
+                button
+                key="menu"
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <HomeOutlinedIcon />
+              </ListItem>
+              <ListItem
+                button
+                key="menu"
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <HomeOutlinedIcon />
+              </ListItem>
+              <ListItem
+                button
+                key="menu"
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <HomeOutlinedIcon />
+              </ListItem>
+              <ListItem
+                button
+                key="menu"
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <HomeOutlinedIcon />
+              </ListItem>
+            </Box>
+          </>
+          // End collapsed content
+        ) : (
+          // Begin not collapsed content
+          <>
+            <Box>
+              <ListItem
+                button
+                key="menu"
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  height:"40px"
+
+                }}
+                onClick={() => setCollapsed(!collapsed)}
+              >
+                {collapsed ? (
+                  <MenuOutlinedIcon />
+                ) : (
+                  <>
+                    <Typography variant="h3" color={colors.grey[100]}>
+                      ADMINIS
+                    </Typography>
+                    <MenuOutlinedIcon />
+                  </>
+                )}
+              </ListItem>
+            </Box>
+            <Box
+              sx={{
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                alignContent: "center"
+              }}
+            >
+              <ListItem
+                button
+                key="menu"
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <ListItemIcon>
+                  <HomeOutlinedIcon />
+                </ListItemIcon>
+                <ListItemText primary="Dashboard" />
+              </ListItem>
+              <ListItem
+                button
+                key="menu"
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <ListItemIcon>
+                  <HomeOutlinedIcon />
+                </ListItemIcon>
+                <ListItemText primary="Dashboard" />
+              </ListItem>
+              <ListItem
+                button
+                key="menu"
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <ListItemIcon>
+                  <HomeOutlinedIcon />
+                </ListItemIcon>
+                <ListItemText primary="Dashboard" />
+              </ListItem>
+              <ListItem
+                button
+                key="menu"
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <ListItemIcon>
+                  <HomeOutlinedIcon />
+                </ListItemIcon>
+                <ListItemText primary="Dashboard" />
+              </ListItem>
+              <ListItem
+                button
+                key="menu"
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <ListItemIcon>
+                  <HomeOutlinedIcon />
+                </ListItemIcon>
+                <ListItemText primary="Dashboard" />
+              </ListItem>
+              <ListItem
+                button
+                key="menu"
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <ListItemIcon>
+                  <HomeOutlinedIcon />
+                </ListItemIcon>
+                <ListItemText primary="Dashboard" />
+              </ListItem>
+            </Box>
+          </>
+          // End not collapsed content
+        )}
+      </List>
+    </Box>
+  );
+
+  return (
+    <Box>
+      <Drawer
+        variant="permanent"
+        anchor="left"
+        open={!collapsed}
+        transitionDuration={200}
+        sx={{
+          "& .MuiDrawer-paper": {
+            zIndex: "0",
+            position: "relative",
+            height: "100vh",
+          },
+        }}
+      >
+        {list()}
+      </Drawer>
+    </Box>
   );
 }
 
