@@ -5,6 +5,7 @@ import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./scenes/Dashboard/index";
+import RandomForm from "./scenes/RandomUserForm/index";
 /*import Team from './scenes/Team';
 import Invoices from './scenes/Invoices';
 import Contacts from './scenes/Contacts';
@@ -46,6 +47,8 @@ function App() {
             <Router>
               <Routes>
                 <Route path="/" element={<Dashboard />} />
+                <Route path="/form" element={<RandomForm />} />
+
                 {/* Other routes */}
               </Routes>
             </Router>
