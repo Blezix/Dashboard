@@ -6,6 +6,7 @@ import Sidebar from "./scenes/global/Sidebar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./scenes/Dashboard/index";
 import RandomForm from "./scenes/RandomUserForm/index";
+import Workers from "./scenes/Workers";
 /*import Team from './scenes/Team';
 import Invoices from './scenes/Invoices';
 import Contacts from './scenes/Contacts';
@@ -18,6 +19,7 @@ import Geography from './scenes/Geography';
 import Calendar from './scenes/calendar';
   */
 import "./App.css";
+import { Work } from "@mui/icons-material";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -48,6 +50,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/form" element={<RandomForm />} />
+                <Route path="/workers" element={<Workers />} />
 
                 {/* Other routes */}
               </Routes>
