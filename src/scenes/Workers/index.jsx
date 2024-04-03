@@ -5,7 +5,7 @@ import { tokens } from "../../theme";
 import { useTheme } from "@emotion/react";
 import { Box } from "@mui/material";
 import axios from "axios";
-function Workers() {
+function Workers(sx) {
   const [rows, setRows] = useState([]);
 
   const theme = useTheme();
@@ -41,10 +41,11 @@ function Workers() {
         rows={rows}
         columns={columns}
         pageSize={5}
-        checkboxSelection
+        
         sx={{
           "& .MuiDataGrid-columnHeaderRow": {
             backgroundColor: "black !important",
+            width:"100%"
           },
         }}
       />

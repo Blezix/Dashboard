@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./scenes/Dashboard/index";
 import RandomForm from "./scenes/RandomUserForm/index";
 import Workers from "./scenes/Workers";
+import PiechartsSite from "./scenes/PieChart";
 /*import Team from './scenes/Team';
 import Invoices from './scenes/Invoices';
 import Contacts from './scenes/Contacts';
@@ -51,7 +52,7 @@ function App() {
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/form" element={<RandomForm />} />
                 <Route path="/workers" element={<Workers />} />
-
+                <Route path="/piechart" element={<PiechartsSite/>}/>
                 {/* Other routes */}
               </Routes>
             </Router>
