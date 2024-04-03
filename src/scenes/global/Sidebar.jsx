@@ -29,7 +29,7 @@ function Sidebar(sx) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [collapsed, setCollapsed] = useState(false);
-  const [user,SetUser] = useState({
+  const [user, SetUser] = useState({
     name: "Samatha",
     image: "../../assets/picture.png",
     role: "Admin",
