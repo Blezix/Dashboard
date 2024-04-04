@@ -3,13 +3,15 @@ import { useEffect, useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import { useTheme } from "@emotion/react";
-import { Box } from "@mui/material";
+import { Box ,Skeleton} from "@mui/material";
 import axios from "axios";
 function Workers(sx) {
   const [rows, setRows] = useState([]);
-
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const [loading,setLoading] = React.useState(true);
+
+  
   const columns = [
     { field: "id", headerName: "ID", width: 90 },
     { field: "name", headerName: "Name", width: 150 },
@@ -29,7 +31,19 @@ function Workers(sx) {
 
     fetchdata();
   }, []);
+  React.useEffect(() => {
+    setTimeout(() => {
+        setLoading(false);
+    }, 1500);
+});
 
+if (loading) {
+    return (
+        <Box flexShrink={1} width="100%" height="100%">
+            <Skeleton animation="wave" variant="rectangular" width="100%" height="100%" />
+        </Box>
+    );
+}
   return (
     <Box
       sx={{
