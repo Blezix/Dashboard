@@ -4,6 +4,7 @@ import { useTheme } from "@emotion/react";
 import Workers from "../Workers";
 import PiechartsSite from "../PieChart";
 import BarChartSite from "../BarChart";
+import DataCard from "../../components/DataCard";
 function Dashboard() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -35,22 +36,10 @@ function Dashboard() {
           flexDirection: "row",
         }}
       >
-        <Box
-          sx={{ flex: "1 1 45%", borderRadius: "15px" }}
-          bgcolor={colors.grey[200]}
-        ></Box>
-        <Box
-          sx={{ flex: "1 1 45%", borderRadius: "15px" }}
-          bgcolor={colors.grey[200]}
-        ></Box>
-        <Box
-          sx={{ flex: "1 1 45%", borderRadius: "15px" }}
-          bgcolor={colors.grey[200]}
-        ></Box>
-        <Box
-          sx={{ flex: "1 1 45%", borderRadius: "15px" }}
-          bgcolor={colors.grey[200]}
-        ></Box>
+<DataCard sx={{flex: "1 1 45%", borderRadius: "15px"}} title={"Visitors"} data={Math.floor(Math.random() * 10000)} CardColor={colors.blueAccent[200]} />
+<DataCard sx={{flex: "1 1 45%", borderRadius: "15px"}} title={"Visitors"} data={Math.floor(Math.random() * 10000)} CardColor={colors.blueAccent[400]} />
+<DataCard sx={{flex: "1 1 45%", borderRadius: "15px"}} title={"Visitors"} data={Math.floor(Math.random() * 10000)} CardColor={colors.blueAccent[600]} />
+<DataCard sx={{flex: "1 1 45%", borderRadius: "15px"}} title={"Visitors"} data={Math.floor(Math.random() * 10000)} CardColor={colors.blueAccent[500]} />
       </Box>
 
       <Box
