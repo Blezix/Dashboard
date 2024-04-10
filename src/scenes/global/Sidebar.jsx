@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Box,
-  IconButton,
   Typography,
   useTheme,
   Drawer,
@@ -10,7 +10,6 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
-import { Link } from "react-router-dom";
 import { tokens } from "../../theme";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
@@ -23,7 +22,6 @@ import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 
 function Sidebar(sx) {
   const theme = useTheme();
@@ -36,13 +34,13 @@ function Sidebar(sx) {
   });
 
   const menuItems = [
-    { icon: <HomeOutlinedIcon />, text: "Dashboard", path: "/dashboard" },
+    { icon: <HomeOutlinedIcon />, text: "Dashboard", path: "/" },
   ];
 
   const dataItems = [
-    { icon: <PeopleOutlinedIcon />, text: "People", path: "/people" },
+    { icon: <PeopleOutlinedIcon />, text: "Workers", path: "/workers" },
     { icon: <ContactsOutlinedIcon />, text: "Contacts", path: "/contacts" },
-    { icon: <ReceiptOutlinedIcon />, text: "Receipts", path: "/receipts" },
+    { icon: <ReceiptOutlinedIcon />, text: "Formularz", path: "/form" },
   ];
   const PagesItems = [
     { icon: <PersonOutlinedIcon />, text: "Profile", path: "/profile" },
@@ -54,24 +52,26 @@ function Sidebar(sx) {
     { icon: <HelpOutlineOutlinedIcon />, text: "Help", path: "/help" },
   ];
   const ChartsItems = [
-    { icon: <BarChartOutlinedIcon />, text: "Bar Chart", path: "/bar-chart" },
+    { icon: <BarChartOutlinedIcon />, text: "Bar Chart", path: "/barchart" },
     {
       icon: <PieChartOutlineOutlinedIcon />,
       text: "Pie Chart",
-      path: "/pie-chart",
+      path: "/piechart",
     },
     { icon: <TimelineOutlinedIcon />, text: "Timeline", path: "/timeline" },
   ];
+
   const list = () => (
     <Box
       sx={{
         width: collapsed ? 60 : 250,
         backgroundColor: colors.primary[400],
         color: colors.grey[100],
-        height: "100%",
+        height: "100vh",
         display: "flex",
         flexDirection: "column",
         transition: "width 0.3s",
+        overflowY: "auto", // Add this line
         ...sx,
       }}
     >
@@ -133,123 +133,108 @@ function Sidebar(sx) {
             alignContent: "center",
           }}
         >
-          {menuItems.map((item, index) => (
-            //    <Link to={item.path} key={index}>
-            <ListItem
-              key="menu"
-              button
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <ListItemIcon
-                sx={{
-                  justifyContent: collapsed ? "center" : "space-between",
-                }}
-              >
-                {item.icon}
-              </ListItemIcon>
-              {!collapsed && <ListItemText primary={item.text} />}
-            </ListItem>
-            //   </Link>
-          ))}
-          <Typography
-            variant="body1"
-            color={colors.grey[200]}
-            sx={{
-              textAlign: "start",
-              m: "10px",
-            }}
-          >
-            {collapsed ? "" : "Data"}
+          <Typography variant="body1" sx={{ textAlign: "start", m: "10px", color: colors.grey[200] }}>
+            Menu
           </Typography>
-          {dataItems.map((item, index) => (
-            //    <Link to={item.path} key={index}>
-            <ListItem
-              key="data"
-              button
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <ListItemIcon
+          {menuItems.map((item) => (
+            <Link to={item.path} style={{ textDecoration: 'none', color: colors.grey[200] }}>
+              <ListItem
+                key={item.path}
+                button
                 sx={{
-                  justifyContent: collapsed ? "center" : "space-between",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
                 }}
               >
-                {item.icon}
-              </ListItemIcon>
-              {!collapsed && <ListItemText primary={item.text} />}
-            </ListItem>
-            //    </Link>
+                <ListItemIcon
+                  sx={{
+                    justifyContent: collapsed ? "center" : "space-between",
+                  }}
+                >
+                  {item.icon}
+                </ListItemIcon>
+                {!collapsed && <ListItemText primary={item.text} />}
+              </ListItem>
+            </Link>
           ))}
-          <Typography
-            variant="body1"
-            color={colors.grey[200]}
-            sx={{
-              textAlign: "start",
-              m: "10px",
-            }}
-          >
-            {collapsed ? "" : "Pages"}
+
+          <Typography variant="body1" sx={{ textAlign: "start", m: "10px", color: colors.grey[200] }}>
+            Data
           </Typography>
-          {PagesItems.map((item, index) => (
-            //    <Link to={item.path} key={index}>
-            <ListItem
-              key="pages"
-              button
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <ListItemIcon
+          {dataItems.map((item) => (
+            <Link to={item.path} style={{ textDecoration: 'none', color: colors.grey[200] }}>
+              <ListItem
+                key={item.path}
+                button
                 sx={{
-                  justifyContent: collapsed ? "center" : "space-between",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
                 }}
               >
-                {item.icon}
-              </ListItemIcon>
-              {!collapsed && <ListItemText primary={item.text} />}
-            </ListItem>
-            //    </Link>
+                <ListItemIcon
+                  sx={{
+                    justifyContent: collapsed ? "center" : "space-between",
+                  }}
+                >
+                  {item.icon}
+                </ListItemIcon>
+                {!collapsed && <ListItemText primary={item.text} />}
+              </ListItem>
+            </Link>
           ))}
-          <Typography
-            variant="body1"
-            color={colors.grey[200]}
-            sx={{
-              textAlign: "start",
-              m: "10px",
-            }}
-          >
-            {collapsed ? "" : "Charts"}
+
+          <Typography variant="body1" sx={{ textAlign: "start", m: "10px", color: colors.grey[200] }}>
+            Pages
           </Typography>
-          {ChartsItems.map((item, index) => (
-            //    <Link to={item.path} key={index}>
-            <ListItem
-              key="charts"
-              button
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <ListItemIcon
+          {PagesItems.map((item) => (
+            <Link to={item.path} style={{ textDecoration: 'none', color: colors.grey[200] }}>
+              <ListItem
+                key={item.path}
+                button
                 sx={{
-                  justifyContent: collapsed ? "center" : "space-between",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
                 }}
               >
-                {item.icon}
-              </ListItemIcon>
-              {!collapsed && <ListItemText primary={item.text} />}
-            </ListItem>
-            //    </Link>
+                <ListItemIcon
+                  sx={{
+                    justifyContent: collapsed ? "center" : "space-between",
+                  }}
+                >
+                  {item.icon}
+                </ListItemIcon>
+                {!collapsed && <ListItemText primary={item.text} />}
+              </ListItem>
+            </Link>
+          ))}
+
+          <Typography variant="body1" sx={{ textAlign: "start", m: "10px", color: colors.grey[200] }}>
+            Charts
+          </Typography>
+          {ChartsItems.map((item) => (
+            <Link to={item.path} style={{ textDecoration: 'none', color: colors.grey[200] }}>
+              <ListItem
+                key={item.path}
+                button
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <ListItemIcon
+                  sx={{
+                    justifyContent: collapsed ? "center" : "space-between",
+                  }}
+                >
+                  {item.icon}
+                </ListItemIcon>
+                {!collapsed && <ListItemText primary={item.text} />}
+              </ListItem>
+            </Link>
           ))}
         </Box>
       </List>
@@ -257,7 +242,8 @@ function Sidebar(sx) {
   );
 
   return (
-    <Box>
+    <Box 
+    >
       <Drawer
         variant="permanent"
         anchor="left"
@@ -267,7 +253,7 @@ function Sidebar(sx) {
           "& .MuiDrawer-paper": {
             zIndex: "0",
             position: "relative",
-            height: "100vh",
+            height: "100%",
           },
         }}
       >

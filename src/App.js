@@ -10,6 +10,7 @@ import RandomForm from "./scenes/RandomUserForm/index";
 import Workers from "./scenes/Workers";
 import PiechartsSite from "./scenes/PieChart";
 import BarChartSite from "./scenes/BarChart";
+import MyFrom from "./scenes/Form/";
 /*import Team from './scenes/Team';
 import Invoices from './scenes/Invoices';
 import Contacts from './scenes/Contacts';
@@ -54,8 +55,13 @@ function App() {
             width: "100vw",
           }}
         >
-          <Sidebar />
-          <Box
+
+            
+        
+            <Router>
+            <Sidebar />
+
+            <Box
             className="content"
             sx={{
               display: "flex",
@@ -63,19 +69,22 @@ function App() {
               width: "100%",
             }}
           >
-            <Topbar />
-            <Router>
+                        <Topbar />
+
               <Routes>
                 <Route path="/" element={<Dashboard />} />
-                <Route path="/form" element={<RandomForm />} />
+                <Route path="/SomeForm" element={<RandomForm />} />
                 <Route path="/workers" element={<Workers />} />
                 <Route path="/piechart" element={<PiechartsSite/>}/>
+                <Route path="/form" element={<MyFrom/>}/>
+
                 <Route path="/barchart" element={<BarChartSite/>}/>
                 {/* Other routes */}
               </Routes>
+              </Box>
+
             </Router>
           </Box>
-        </Box>
       </ThemeProvider>
     </ColorModeContext.Provider>
   );

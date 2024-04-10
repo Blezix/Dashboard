@@ -23,23 +23,28 @@ function Dashboard() {
       <Box
         sx={{
           [theme.breakpoints.down('md')]: {
-            flex: "1 1 100%",
+            flex: "1 1 90%",
+            height: "30%",
 
           },
           [theme.breakpoints.up('md')]: {
             flex: "1 1 40%",
+            height: "35%",
+
           },
-          height: "40%",
           display: "flex",
           gap: "10px",
           flexWrap: "wrap",
           flexDirection: "row",
         }}
       >
-<DataCard sx={{flex: "1 1 45%", borderRadius: "15px"}} title={"Visitors"} data={Math.floor(Math.random() * 10000)} CardColor={colors.blueAccent[200]} />
-<DataCard sx={{flex: "1 1 45%", borderRadius: "15px"}} title={"Visitors"} data={Math.floor(Math.random() * 10000)} CardColor={colors.blueAccent[400]} />
-<DataCard sx={{flex: "1 1 45%", borderRadius: "15px"}} title={"Visitors"} data={Math.floor(Math.random() * 10000)} CardColor={colors.blueAccent[600]} />
-<DataCard sx={{flex: "1 1 45%", borderRadius: "15px"}} title={"Visitors"} data={Math.floor(Math.random() * 10000)} CardColor={colors.blueAccent[500]} />
+<DataCard sx={{flex: "1 1 45%",
+ height:"50%",
+  borderRadius: "15px"
+  }} title={"Visitors"} data={Math.floor(Math.random() * 10000)} CardColor={colors.blueAccent[200]} />
+<DataCard sx={{flex: "1 1 45%", height:"50%",borderRadius: "15px"}} title={"Visitors"} data={Math.floor(Math.random() * 10000)} CardColor={colors.blueAccent[400]} />
+<DataCard sx={{flex: "1 1 45%", height:"50%",borderRadius: "15px"}} title={"Visitors"} data={Math.floor(Math.random() * 10000)} CardColor={colors.blueAccent[600]} />
+<DataCard sx={{flex: "1 1 45%", height:"50%",borderRadius: "15px"}} title={"Visitors"} data={Math.floor(Math.random() * 10000)} CardColor={colors.blueAccent[500]} />
       </Box>
 
       <Box
