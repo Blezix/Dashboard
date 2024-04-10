@@ -133,11 +133,17 @@ function Sidebar(sx) {
             alignContent: "center",
           }}
         >
-          <Typography variant="body1" sx={{ textAlign: "start", m: "10px", color: colors.grey[200] }}>
+          <Typography
+            variant="body1"
+            sx={{ textAlign: "start", m: "10px", color: colors.grey[200] }}
+          >
             Menu
           </Typography>
           {menuItems.map((item) => (
-            <Link to={item.path} style={{ textDecoration: 'none', color: colors.grey[200] }}>
+            <Link
+              to={item.path}
+              style={{ textDecoration: "none", color: colors.grey[200] }}
+            >
               <ListItem
                 key={item.path}
                 button
@@ -159,11 +165,17 @@ function Sidebar(sx) {
             </Link>
           ))}
 
-          <Typography variant="body1" sx={{ textAlign: "start", m: "10px", color: colors.grey[200] }}>
+          <Typography
+            variant="body1"
+            sx={{ textAlign: "start", m: "10px", color: colors.grey[200] }}
+          >
             Data
           </Typography>
           {dataItems.map((item) => (
-            <Link to={item.path} style={{ textDecoration: 'none', color: colors.grey[200] }}>
+            <Link
+              to={item.path}
+              style={{ textDecoration: "none", color: colors.grey[200] }}
+            >
               <ListItem
                 key={item.path}
                 button
@@ -185,11 +197,17 @@ function Sidebar(sx) {
             </Link>
           ))}
 
-          <Typography variant="body1" sx={{ textAlign: "start", m: "10px", color: colors.grey[200] }}>
+          <Typography
+            variant="body1"
+            sx={{ textAlign: "start", m: "10px", color: colors.grey[200] }}
+          >
             Pages
           </Typography>
           {PagesItems.map((item) => (
-            <Link to={item.path} style={{ textDecoration: 'none', color: colors.grey[200] }}>
+            <Link
+              to={item.path}
+              style={{ textDecoration: "none", color: colors.grey[200] }}
+            >
               <ListItem
                 key={item.path}
                 button
@@ -211,11 +229,17 @@ function Sidebar(sx) {
             </Link>
           ))}
 
-          <Typography variant="body1" sx={{ textAlign: "start", m: "10px", color: colors.grey[200] }}>
+          <Typography
+            variant="body1"
+            sx={{ textAlign: "start", m: "10px", color: colors.grey[200] }}
+          >
             Charts
           </Typography>
           {ChartsItems.map((item) => (
-            <Link to={item.path} style={{ textDecoration: 'none', color: colors.grey[200] }}>
+            <Link
+              to={item.path}
+              style={{ textDecoration: "none", color: colors.grey[200] }}
+            >
               <ListItem
                 key={item.path}
                 button
@@ -242,8 +266,7 @@ function Sidebar(sx) {
   );
 
   return (
-    <Box 
-    >
+    <Box>
       <Drawer
         variant="permanent"
         anchor="left"

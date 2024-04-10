@@ -22,15 +22,13 @@ function Dashboard() {
     >
       <Box
         sx={{
-          [theme.breakpoints.down('md')]: {
+          [theme.breakpoints.down("md")]: {
             flex: "1 1 90%",
             height: "30%",
-
           },
-          [theme.breakpoints.up('md')]: {
+          [theme.breakpoints.up("md")]: {
             flex: "1 1 40%",
             height: "35%",
-
           },
           display: "flex",
           gap: "10px",
@@ -38,22 +36,38 @@ function Dashboard() {
           flexDirection: "row",
         }}
       >
-<DataCard sx={{flex: "1 1 45%",
- height:"50%",
-  borderRadius: "15px"
-  }} title={"Visitors"} data={Math.floor(Math.random() * 10000)} CardColor={colors.blueAccent[200]} />
-<DataCard sx={{flex: "1 1 45%", height:"50%",borderRadius: "15px"}} title={"Visitors"} data={Math.floor(Math.random() * 10000)} CardColor={colors.blueAccent[400]} />
-<DataCard sx={{flex: "1 1 45%", height:"50%",borderRadius: "15px"}} title={"Visitors"} data={Math.floor(Math.random() * 10000)} CardColor={colors.blueAccent[600]} />
-<DataCard sx={{flex: "1 1 45%", height:"50%",borderRadius: "15px"}} title={"Visitors"} data={Math.floor(Math.random() * 10000)} CardColor={colors.blueAccent[500]} />
+        <DataCard
+          sx={{ flex: "1 1 45%", height: "50%", borderRadius: "15px" }}
+          title={"Visitors"}
+          data={Math.floor(Math.random() * 10000)}
+          CardColor={colors.blueAccent[200]}
+        />
+        <DataCard
+          sx={{ flex: "1 1 45%", height: "50%", borderRadius: "15px" }}
+          title={"Visitors"}
+          data={Math.floor(Math.random() * 10000)}
+          CardColor={colors.blueAccent[400]}
+        />
+        <DataCard
+          sx={{ flex: "1 1 45%", height: "50%", borderRadius: "15px" }}
+          title={"Visitors"}
+          data={Math.floor(Math.random() * 10000)}
+          CardColor={colors.blueAccent[600]}
+        />
+        <DataCard
+          sx={{ flex: "1 1 45%", height: "50%", borderRadius: "15px" }}
+          title={"Visitors"}
+          data={Math.floor(Math.random() * 10000)}
+          CardColor={colors.blueAccent[500]}
+        />
       </Box>
 
       <Box
         sx={{
-          [theme.breakpoints.down('md')]: {
+          [theme.breakpoints.down("md")]: {
             flex: "1 100%",
-
           },
-          [theme.breakpoints.up('md')]: {
+          [theme.breakpoints.up("md")]: {
             flex: "1 55%",
           },
           height: "40%",
@@ -63,24 +77,23 @@ function Dashboard() {
           flexWrap: "wrap",
           flexDirection: "row",
           borderRadius: "10px", // Example border radius
-          border: `1px solid`, 
-          borderColor: colors.grey[600]
+          border: `1px solid`,
+          borderColor: colors.grey[600],
         }}
       >
         <BarChartSite></BarChartSite>
       </Box>
       <Box
         sx={{
-          [theme.breakpoints.down('md')]: {
+          [theme.breakpoints.down("md")]: {
             flex: "1 100%",
-
           },
-          [theme.breakpoints.up('md')]: {
+          [theme.breakpoints.up("md")]: {
             flex: "1 45%",
           },
           height: "50%",
           display: "flex",
-          minWidth:"20%",
+          minWidth: "20%",
           borderRadius: "15px",
           flexWrap: "wrap",
           flexDirection: "row",
@@ -90,11 +103,10 @@ function Dashboard() {
       </Box>
       <Box
         sx={{
-          [theme.breakpoints.down('md')]: {
+          [theme.breakpoints.down("md")]: {
             flex: "1 100%",
-
           },
-          [theme.breakpoints.up('md')]: {
+          [theme.breakpoints.up("md")]: {
             flex: "1 30%",
           },
           height: "50%",
@@ -104,8 +116,8 @@ function Dashboard() {
           flexWrap: "wrap",
           flexDirection: "row",
           borderRadius: "10px", // Example border radius
-          border: `1px solid`, 
-          borderColor: colors.grey[600]
+          border: `1px solid`,
+          borderColor: colors.grey[600],
         }}
       >
         <PiechartsSite></PiechartsSite>

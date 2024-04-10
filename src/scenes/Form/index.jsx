@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { useForm, Controller } from 'react-hook-form';
-import {Box, Button, TextField, Modal } from '@mui/material';
-import { Form } from 'react-router-dom';
-import { tokens } from '../../theme';
-import { useTheme } from '@emotion/react';
-import { AddBox } from '@mui/icons-material';
+import React, { useState } from "react";
+import { useForm, Controller } from "react-hook-form";
+import { Box, Button, TextField, Modal } from "@mui/material";
+import { Form } from "react-router-dom";
+import { tokens } from "../../theme";
+import { useTheme } from "@emotion/react";
+import { AddBox } from "@mui/icons-material";
 function MyForm() {
   const { handleSubmit, control } = useForm();
   const [open, setOpen] = useState(false);
-    const theme = useTheme();
+  const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
   const onSubmit = (data) => {
@@ -17,38 +17,47 @@ function MyForm() {
 
   return (
     <Box
-        sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "20px", width: "100%", height: "100%" }}
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: "20px",
+        width: "100%",
+        height: "100%",
+      }}
     >
       <Button
-      sx={{ bgcolor: colors.blueAccent[300],
-                  " &:hover": {
-                    bgcolor: colors.blueAccent[400],
-                  },
-                width:"200px",
-                height:"50px",
-                position:"absolute",
-         
-                    }}
-      onClick={() => setOpen(true)}>Otwórz Modal</Button>
+        sx={{
+          bgcolor: colors.blueAccent[300],
+          " &:hover": {
+            bgcolor: colors.blueAccent[400],
+          },
+          width: "200px",
+          height: "50px",
+          position: "absolute",
+        }}
+        onClick={() => setOpen(true)}
+      >
+        Otwórz Modal
+      </Button>
       <Modal
         open={open}
         onClose={() => setOpen(false)}
-   
         top={50}
         left={50}
         bgcolor={colors.primary[400]}
       >
-        <form 
-        style={{
-            position:"absolute",
-             display:"flex",
-             flexDirection:"column",
-             alignItems:"space-between",
-             width:"300px",
-             height:"300px",
-        }}
-             
-        onSubmit={handleSubmit(onSubmit)}>
+        <form
+          style={{
+            position: "absolute",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "space-between",
+            width: "300px",
+            height: "300px",
+          }}
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <Controller
             name="pole1"
             control={control}
@@ -61,13 +70,17 @@ function MyForm() {
             defaultValue=""
             render={({ field }) => <TextField {...field} label="Pole 2" />}
           />
-          <Button  sx={{ bgcolor: colors.blueAccent[200],
-                  " &:hover": {
-                    bgcolor: colors.blueAccent[400],
-                  },
-                  }
-                         }
-         type="submit">Zapisz</Button>
+          <Button
+            sx={{
+              bgcolor: colors.blueAccent[200],
+              " &:hover": {
+                bgcolor: colors.blueAccent[400],
+              },
+            }}
+            type="submit"
+          >
+            Zapisz
+          </Button>
         </form>
       </Modal>
     </Box>
