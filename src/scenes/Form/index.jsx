@@ -43,9 +43,11 @@ function MyForm() {
       <Modal
         open={open}
         onClose={() => setOpen(false)}
-        top={50}
-        left={50}
-        bgcolor={colors.primary[400]}
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
       >
         <form
           style={{
@@ -53,8 +55,9 @@ function MyForm() {
             display: "flex",
             flexDirection: "column",
             alignItems: "space-between",
-            width: "300px",
-            height: "300px",
+            width: "30%",
+            gap:"40px",
+            bgcolor: colors.blueAccent[200]
           }}
           onSubmit={handleSubmit(onSubmit)}
         >

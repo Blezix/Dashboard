@@ -37,25 +37,25 @@ function Dashboard() {
         }}
       >
         <DataCard
-          sx={{ flex: "1 1 45%", height: "50%", borderRadius: "15px" }}
+          sx={{ flex: "1 1 45%", height: "50%", borderRadius:"7px"}}
           title={"Visitors"}
           data={Math.floor(Math.random() * 10000)}
           CardColor={colors.blueAccent[200]}
         />
         <DataCard
-          sx={{ flex: "1 1 45%", height: "50%", borderRadius: "15px" }}
+          sx={{ flex: "1 1 45%", height: "50%",borderRadius:"7px"  }}
           title={"Visitors"}
           data={Math.floor(Math.random() * 10000)}
           CardColor={colors.blueAccent[400]}
         />
         <DataCard
-          sx={{ flex: "1 1 45%", height: "50%", borderRadius: "15px" }}
+          sx={{ flex: "1 1 45%", height: "50%",borderRadius:"7px"  }}
           title={"Visitors"}
           data={Math.floor(Math.random() * 10000)}
           CardColor={colors.blueAccent[600]}
         />
         <DataCard
-          sx={{ flex: "1 1 45%", height: "50%", borderRadius: "15px" }}
+          sx={{ flex: "1 1 45%", height: "50%", borderRadius: "7px" }}
           title={"Visitors"}
           data={Math.floor(Math.random() * 10000)}
           CardColor={colors.blueAccent[500]}

@@ -72,6 +72,9 @@ function Sidebar(sx) {
         flexDirection: "column",
         transition: "width 0.3s",
         overflowY: "auto", // Add this line
+        [theme.breakpoints.down("sm")]: {
+          display:"none"
+        },
         ...sx,
       }}
     >

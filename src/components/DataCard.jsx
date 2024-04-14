@@ -28,7 +28,6 @@ function DataCard({ sx, title, data, CardColor }) {
           display: "flex",
           flexDirection: "row",
           backgroundColor: colors.blueAccent[900],
-          borderRadius: "15px",
           ...sx,
         }}
       >
