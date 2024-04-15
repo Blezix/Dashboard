@@ -11,17 +11,7 @@ import Workers from "./scenes/Workers";
 import PiechartsSite from "./scenes/PieChart";
 import BarChartSite from "./scenes/BarChart";
 import MyFrom from "./scenes/Form/";
-/*import Team from './scenes/Team';
-import Invoices from './scenes/Invoices';
-import Contacts from './scenes/Contacts';
-import Bar from './scenes/Bar';
-import Form from './scenes/Form';
-import Line from './scenes/Line';
-import Pie from './scenes/Pie';
-import FAQ from './scenes/FAQ';
-import Geography from './scenes/Geography';
-import Calendar from './scenes/calendar';
-  */
+  
 import "./App.css";
 import { Work } from "@mui/icons-material";
 
@@ -81,7 +71,6 @@ function App() {
                 <Route path="/form" element={<MyFrom />} />
 
                 <Route path="/barchart" element={<BarChartSite />} />
-                {/* Other routes */}
               </Routes>
             </Box>
           </Router>
