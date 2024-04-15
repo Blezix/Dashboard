@@ -42,7 +42,7 @@ function Sidebar(sx) {
     { icon: <ContactsOutlinedIcon />, text: "ApiForm", path: "/apiForm" },
     { icon: <ReceiptOutlinedIcon />, text: "Formularz", path: "/form" },
   ];
-  const PagesItems = [
+  const pagesItems = [
     { icon: <PersonOutlinedIcon />, text: "Profile", path: "/profile" },
     {
       icon: <CalendarTodayOutlinedIcon />,
@@ -51,7 +51,7 @@ function Sidebar(sx) {
     },
     { icon: <HelpOutlineOutlinedIcon />, text: "Help", path: "/help" },
   ];
-  const ChartsItems = [
+  const chartsItems = [
     { icon: <BarChartOutlinedIcon />, text: "Bar Chart", path: "/barchart" },
     {
       icon: <PieChartOutlineOutlinedIcon />,
@@ -206,7 +206,7 @@ function Sidebar(sx) {
           >
             Pages
           </Typography>
-          {PagesItems.map((item) => (
+          {pagesItems.map((item) => (
             <Link
               to={item.path}
               style={{ textDecoration: "none", color: colors.grey[200] }}
@@ -238,7 +238,7 @@ function Sidebar(sx) {
           >
             Charts
           </Typography>
-          {ChartsItems.map((item) => (
+          {chartsItems.map((item) => (
             <Link
               to={item.path}
               style={{ textDecoration: "none", color: colors.grey[200] }}

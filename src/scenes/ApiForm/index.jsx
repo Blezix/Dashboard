@@ -57,7 +57,7 @@ function ApiForm() {
         }}
         onClick={() => setOpen(true)}
       >
-        Open Modal
+        otwórz Modal
       </Button>
       <Modal
         sx={{
