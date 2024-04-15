@@ -6,7 +6,7 @@ import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./scenes/Dashboard/index";
-import RandomForm from "./scenes/RandomUserForm/index";
+import ApiForm from "./scenes/ApiForm/index";
 import Workers from "./scenes/Workers";
 import PiechartsSite from "./scenes/PieChart";
 import BarChartSite from "./scenes/BarChart";
@@ -75,7 +75,7 @@ function App() {
 
               <Routes>
                 <Route path="/" element={<Dashboard />} />
-                <Route path="/SomeForm" element={<RandomForm />} />
+                <Route path="/ApiForm" element={<ApiForm />} />
                 <Route path="/workers" element={<Workers />} />
                 <Route path="/piechart" element={<PiechartsSite />} />
                 <Route path="/form" element={<MyFrom />} />

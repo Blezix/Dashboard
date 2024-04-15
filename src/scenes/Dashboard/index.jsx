@@ -37,19 +37,19 @@ function Dashboard() {
         }}
       >
         <DataCard
-          sx={{ flex: "1 1 45%", height: "50%", borderRadius:"7px"}}
+          sx={{ flex: "1 1 45%", height: "50%", borderRadius: "7px" }}
           title={"Visitors"}
           data={Math.floor(Math.random() * 10000)}
           CardColor={colors.blueAccent[200]}
         />
         <DataCard
-          sx={{ flex: "1 1 45%", height: "50%",borderRadius:"7px"  }}
+          sx={{ flex: "1 1 45%", height: "50%", borderRadius: "7px" }}
           title={"Visitors"}
           data={Math.floor(Math.random() * 10000)}
           CardColor={colors.blueAccent[400]}
         />
         <DataCard
-          sx={{ flex: "1 1 45%", height: "50%",borderRadius:"7px"  }}
+          sx={{ flex: "1 1 45%", height: "50%", borderRadius: "7px" }}
           title={"Visitors"}
           data={Math.floor(Math.random() * 10000)}
           CardColor={colors.blueAccent[600]}
@@ -76,7 +76,7 @@ function Dashboard() {
           gap: "10px",
           flexWrap: "wrap",
           flexDirection: "row",
-          borderRadius: "10px", // Example border radius
+          borderRadius: "10px",
           border: `1px solid`,
           borderColor: colors.grey[600],
         }}
@@ -99,7 +99,7 @@ function Dashboard() {
           flexDirection: "row",
         }}
       >
-        <Workers></Workers>
+        <Workers />
       </Box>
       <Box
         sx={{
@@ -115,12 +115,12 @@ function Dashboard() {
           gap: "10px",
           flexWrap: "wrap",
           flexDirection: "row",
-          borderRadius: "10px", // Example border radius
+          borderRadius: "10px",
           border: `1px solid`,
           borderColor: colors.grey[600],
         }}
       >
-        <PiechartsSite></PiechartsSite>
+        <PiechartsSite />
       </Box>
     </Box>
   );

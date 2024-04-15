@@ -39,7 +39,7 @@ function Sidebar(sx) {
 
   const dataItems = [
     { icon: <PeopleOutlinedIcon />, text: "Workers", path: "/workers" },
-    { icon: <ContactsOutlinedIcon />, text: "Contacts", path: "/contacts" },
+    { icon: <ContactsOutlinedIcon />, text: "ApiForm", path: "/apiForm" },
     { icon: <ReceiptOutlinedIcon />, text: "Formularz", path: "/form" },
   ];
   const PagesItems = [
@@ -71,9 +71,9 @@ function Sidebar(sx) {
         display: "flex",
         flexDirection: "column",
         transition: "width 0.3s",
-        overflowY: "auto", // Add this line
+        overflowY: "auto",
         [theme.breakpoints.down("sm")]: {
-          display:"none"
+          display: "none",
         },
         ...sx,
       }}

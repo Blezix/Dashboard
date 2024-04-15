@@ -4,7 +4,6 @@ import { Box, Button, TextField, Modal } from "@mui/material";
 import { Form } from "react-router-dom";
 import { tokens } from "../../theme";
 import { useTheme } from "@emotion/react";
-import { AddBox } from "@mui/icons-material";
 function MyForm() {
   const { handleSubmit, control } = useForm();
   const [open, setOpen] = useState(false);
@@ -44,9 +43,9 @@ function MyForm() {
         open={open}
         onClose={() => setOpen(false)}
         sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         <form
@@ -56,8 +55,7 @@ function MyForm() {
             flexDirection: "column",
             alignItems: "space-between",
             width: "30%",
-            gap:"40px",
-            bgcolor: colors.blueAccent[200]
+            gap: "40px",
           }}
           onSubmit={handleSubmit(onSubmit)}
         >

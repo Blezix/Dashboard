@@ -50,7 +50,7 @@ function DataCard({ sx, title, data, CardColor }) {
         ...sx,
       }}
     >
-      <Box bgcolor={CardColor} sx={{ width: "20%", height: "100%" }}></Box>
+      <Box bgcolor={CardColor} sx={{ width: "20%", height: "100%" }} />
       <Box
         sx={{
           fontSize: "1.2em",
