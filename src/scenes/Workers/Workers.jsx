@@ -5,17 +5,18 @@ import { tokens } from "../../theme";
 import { useTheme } from "@emotion/react";
 import { Box, Skeleton } from "@mui/material";
 import axios from "axios";
-function Workers(sx) {
+import { useTranslation } from "react-i18next";
+export default function Workers(sx) {
   const [rows, setRows] = useState([]);
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [loading, setLoading] = React.useState(true);
-
+  const { t } = useTranslation();
   const columns = [
     { field: "id", headerName: "ID", width: 90 },
-    { field: "name", headerName: "Name", width: 150 },
-    { field: "email", headerName: "Email", width: 150 },
-    { field: "website", headerName: "Website", width: 110 },
+    { field: "name", headerName: t("Name"), width: 150 },
+    { field: "email", headerName: t("Email"), width: 150 },
+    { field: "website", headerName: t("Website"), width: 110 },
   ];
 
   useEffect(() => {
@@ -70,4 +71,3 @@ function Workers(sx) {
   );
 }
 
-export default Workers;

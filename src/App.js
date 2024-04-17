@@ -5,15 +5,14 @@ import { useState, useMemo, createContext } from "react";
 import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Dashboard from "./scenes/Dashboard/index";
-import ApiForm from "./scenes/ApiForm/index";
-import Workers from "./scenes/Workers";
-import PiechartsSite from "./scenes/PieChart";
-import BarChartSite from "./scenes/BarChart";
-import MyFrom from "./scenes/Form/";
-  
+import Dashboard from "./scenes/Dashboard/Dashboard";
+import ApiForm from "./scenes/ApiForm/ApiForm";
+import Workers from "./scenes/Workers/Workers";
+import PiechartsSite from "./scenes/PieChart/Piechart";
+import BarChartSite from "./scenes/BarChart/Barchart";
+import MyFrom from "./scenes/Form/Form";
+
 import "./App.css";
-import { Work } from "@mui/icons-material";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -69,7 +68,6 @@ function App() {
                 <Route path="/workers" element={<Workers />} />
                 <Route path="/piechart" element={<PiechartsSite />} />
                 <Route path="/form" element={<MyFrom />} />
-
                 <Route path="/barchart" element={<BarChartSite />} />
               </Routes>
             </Box>

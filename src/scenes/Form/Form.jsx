@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { Box, Button, TextField, Modal } from "@mui/material";
-import { Form } from "react-router-dom";
 import { tokens } from "../../theme";
 import { useTheme } from "@emotion/react";
-function MyForm() {
+import { useTranslation } from "react-i18next";
+export default function MyForm() {
   const { handleSubmit, control } = useForm();
   const [open, setOpen] = useState(false);
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const { t } = useTranslation();
 
   const onSubmit = (data) => {
     console.log(data);
@@ -37,7 +38,7 @@ function MyForm() {
         }}
         onClick={() => setOpen(true)}
       >
-        Otwórz Modal
+        {t("OpenForm")}
       </Button>
       <Modal
         open={open}
@@ -60,13 +61,13 @@ function MyForm() {
           onSubmit={handleSubmit(onSubmit)}
         >
           <Controller
-            name="pole1"
+            name={t("pole1")}
             control={control}
             defaultValue=""
             render={({ field }) => <TextField {...field} label="Pole 1" />}
           />
           <Controller
-            name="pole2"
+            name={t("pole2")}
             control={control}
             defaultValue=""
             render={({ field }) => <TextField {...field} label="Pole 2" />}
@@ -80,7 +81,7 @@ function MyForm() {
             }}
             type="submit"
           >
-            Zapisz
+            {t("Save")}
           </Button>
         </form>
       </Modal>
@@ -88,4 +89,3 @@ function MyForm() {
   );
 }
 
-export default MyForm;

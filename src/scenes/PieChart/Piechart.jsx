@@ -5,11 +5,12 @@ import { tokens } from "../../theme";
 import { useTheme } from "@emotion/react";
 import { Box, Skeleton } from "@mui/material";
 import axios from "axios";
-function PiechartsSite(sx) {
+import { useTranslation } from "react-i18next";
+export default function PiechartsSite(sx) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [loading, setLoading] = React.useState(true);
-
+  const { t } = useTranslation();
   React.useEffect(() => {
     setTimeout(() => {
       setLoading(false);
@@ -29,10 +30,10 @@ function PiechartsSite(sx) {
     );
   }
   const data = [
-    { id: 0, label: "Biali", value: 400, color: colors.blueAccent[600] },
-    { id: 1, label: "Czarni", value: 300, color: colors.blueAccent[800] },
-    { id: 2, label: "Zołci", value: 300, color: colors.blueAccent[200] },
-    { id: 3, label: "Wybuchowi", value: 200, color: colors.blueAccent[400] },
+    { id: 0, label: t("Whites"), value: 400, color: colors.blueAccent[600] },
+    { id: 1, label: t("Blacks"), value: 300, color: colors.blueAccent[800] },
+    { id: 2, label: t("Yellows"), value: 300, color: colors.blueAccent[200] },
+    { id: 3, label: t("ExplosiveOnes"), value: 200, color: colors.blueAccent[400] },
   ];
 
   const series = {
@@ -51,4 +52,3 @@ function PiechartsSite(sx) {
   );
 }
 
-export default PiechartsSite;

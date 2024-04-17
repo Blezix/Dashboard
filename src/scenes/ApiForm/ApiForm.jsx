@@ -3,7 +3,7 @@ import axios from "axios";
 import { Button, Modal, TextField } from "@mui/material";
 import { tokens } from "../../theme";
 import { useTheme } from "@emotion/react";
-function ApiForm() {
+export default function ApiForm() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [open, setOpen] = useState(false);
@@ -110,4 +110,3 @@ function ApiForm() {
   );
 }
 
-export default ApiForm;

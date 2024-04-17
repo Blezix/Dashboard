@@ -1,13 +1,16 @@
 import { Box } from "@mui/material";
 import { tokens } from "../../theme";
 import { useTheme } from "@emotion/react";
-import Workers from "../Workers";
-import PiechartsSite from "../PieChart";
-import BarChartSite from "../BarChart";
+import Workers from "../Workers/Workers";
+import PiechartsSite from "../PieChart/Piechart";
+import BarChartSite from "../BarChart/Barchart";
 import DataCard from "../../components/DataCard";
-function Dashboard() {
+import { useTranslation } from "react-i18next";
+
+export default function Dashboard() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const { t } = useTranslation();
   return (
     <Box
       p="20px"
@@ -38,25 +41,25 @@ function Dashboard() {
       >
         <DataCard
           sx={{ flex: "1 1 45%", height: "50%", borderRadius: "7px" }}
-          title={"Visitors"}
+          title={t("Visitors")}
           data={Math.floor(Math.random() * 10000)}
           CardColor={colors.blueAccent[200]}
         />
         <DataCard
           sx={{ flex: "1 1 45%", height: "50%", borderRadius: "7px" }}
-          title={"Visitors"}
+          title={t("Visitors")}
           data={Math.floor(Math.random() * 10000)}
           CardColor={colors.blueAccent[400]}
         />
         <DataCard
           sx={{ flex: "1 1 45%", height: "50%", borderRadius: "7px" }}
-          title={"Visitors"}
+          title={t("Visitors")}
           data={Math.floor(Math.random() * 10000)}
           CardColor={colors.blueAccent[600]}
         />
         <DataCard
           sx={{ flex: "1 1 45%", height: "50%", borderRadius: "7px" }}
-          title={"Visitors"}
+          title={t("Visitors")}
           data={Math.floor(Math.random() * 10000)}
           CardColor={colors.blueAccent[500]}
         />
@@ -126,4 +129,3 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
