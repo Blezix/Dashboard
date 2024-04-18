@@ -33,7 +33,12 @@ export default function PiechartsSite(sx) {
     { id: 0, label: t("Whites"), value: 400, color: colors.blueAccent[600] },
     { id: 1, label: t("Blacks"), value: 300, color: colors.blueAccent[800] },
     { id: 2, label: t("Yellows"), value: 300, color: colors.blueAccent[200] },
-    { id: 3, label: t("ExplosiveOnes"), value: 200, color: colors.blueAccent[400] },
+    {
+      id: 3,
+      label: t("ExplosiveOnes"),
+      value: 200,
+      color: colors.blueAccent[400],
+    },
   ];
 
   const series = {
@@ -51,4 +56,3 @@ export default function PiechartsSite(sx) {
     </Box>
   );
 }
-

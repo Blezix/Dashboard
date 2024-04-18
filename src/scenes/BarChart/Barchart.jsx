@@ -6,14 +6,11 @@ import { tokens } from "../../theme";
 import { Box, Skeleton } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
-
-
-
 export default function BarChartSite() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [loading, setLoading] = React.useState(true);
-  const {t} = useTranslation()
+  const { t } = useTranslation();
 
   const chartSetting = {
     yAxis: [
@@ -21,7 +18,7 @@ export default function BarChartSite() {
         label: "rainfall (mm)",
       },
     ],
-  
+
     sx: {
       [`.${axisClasses.left} .${axisClasses.label}`]: {
         transform: "translate(-20px, 0)",
@@ -103,7 +100,11 @@ export default function BarChartSite() {
       dataset={data}
       xAxis={[{ scaleType: "band", dataKey: "month" }]}
       series={[
-        { dataKey: "london", label: t("London"), color: colors.blueAccent[800] },
+        {
+          dataKey: "london",
+          label: t("London"),
+          color: colors.blueAccent[800],
+        },
         { dataKey: "paris", label: t("Paris"), color: colors.blueAccent[200] },
         {
           dataKey: "newYork",
@@ -116,4 +117,3 @@ export default function BarChartSite() {
     />
   );
 }
-
