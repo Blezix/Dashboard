@@ -1,8 +1,5 @@
 import { useState } from "react";
-import {
-  Box,
-  Drawer,
-} from "@mui/material";
+import { Box, Drawer } from "@mui/material";
 import SidebarList from "../../components/SidebarList";
 
 export default function Sidebar() {
@@ -27,4 +24,3 @@ export default function Sidebar() {
     </Box>
   );
 }
-
