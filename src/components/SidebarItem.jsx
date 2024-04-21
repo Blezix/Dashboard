@@ -4,8 +4,7 @@ import { useState } from "react";
 import { tokens } from "../theme";
 import { ListItem, ListItemIcon, ListItemText,useTheme } from "@mui/material";
 
-export default function SidebarItem({items}) {
-    const [collapsed, setCollapsed] = useState(false);
+export default function SidebarItem({items, collapsed}) {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
     return (

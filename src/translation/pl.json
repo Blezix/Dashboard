@@ -35,5 +35,10 @@
   "London": "Londyn",
   "Paris": "Paryż",
   "New York": "Nowy Jork",
-  "Seoul": "Seul"
+  "Seoul": "Seul",
+  "Menu": "Menu",
+  "Data": "Dane",
+  "Pages": "Strony",
+  "Charts": "Wykresy",
+  "submit": "wyślij"  
 }

@@ -3,8 +3,11 @@ import axios from "axios";
 import { Button, Modal, TextField } from "@mui/material";
 import { tokens } from "../../theme";
 import { useTheme } from "@emotion/react";
+import { useTranslation } from "react-i18next";
+
 export default function ApiForm() {
   const theme = useTheme();
+  const { t } = useTranslation();
   const colors = tokens(theme.palette.mode);
   const [open, setOpen] = useState(false);
   const [user, SetUser] = useState({
@@ -57,7 +60,7 @@ export default function ApiForm() {
         }}
         onClick={() => setOpen(true)}
       >
-        otwórz Modal
+        {t("OpenForm")}
       </Button>
       <Modal
         sx={{
@@ -101,7 +104,7 @@ export default function ApiForm() {
                 height: "50px",
               }}
             >
-              submit
+              {t("submit")}
             </Button>
           </form>
         </>

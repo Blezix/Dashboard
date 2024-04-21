@@ -145,31 +145,31 @@ export default function SidebarList(sx) {
             variant="body1"
             sx={{ textAlign: "start", m: "10px", color: colors.grey[200] }}
           >
-            Menu
+            {t("Menu")}
           </Typography>
-          <SidebarItem items={menuItems} />
+          <SidebarItem items={menuItems} collapsed={collapsed}/>
           <Typography
             variant="body1"
             sx={{ textAlign: "start", m: "10px", color: colors.grey[200] }}
           >
-            Data
+            {t("Data")}
           </Typography>
-          <SidebarItem items={dataItems} />
+          <SidebarItem items={dataItems} collapsed={collapsed}/>
           <Typography
             variant="body1"
             sx={{ textAlign: "start", m: "10px", color: colors.grey[200] }}
           >
-            Pages
+            {t("Pages")}
           </Typography>
-          <SidebarItem items={pagesItems} />
+          <SidebarItem items={pagesItems} collapsed={collapsed}/>
 
           <Typography
             variant="body1"
             sx={{ textAlign: "start", m: "10px", color: colors.grey[200] }}
           >
-            Charts
+            {t("Charts")}
           </Typography>
-          <SidebarItem items={chartsItems} />
+          <SidebarItem items={chartsItems} collapsed={collapsed}/>
         </Box>
       </List>
     </Box>

@@ -35,5 +35,10 @@
   "London": "London",
   "Paris": "Paris",
   "New York": "New York",
-  "Seoul": "Seoul"
+  "Seoul": "Seoul",
+  "Menu": "Menu",
+  "Data": "Data",
+  "Pages": "Pages",
+  "Charts": "Charts",
+  "submit": "submit"
 }
