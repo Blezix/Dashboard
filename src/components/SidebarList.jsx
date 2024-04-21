@@ -65,7 +65,6 @@ export default function SidebarList(sx) {
     { icon: <TimelineOutlinedIcon />, text: t("Timeline"), path: "/timeline" },
   ];
 
-  
   return (
     <Box
       sx={{
@@ -147,21 +146,21 @@ export default function SidebarList(sx) {
           >
             {t("Menu")}
           </Typography>
-          <SidebarItem items={menuItems} collapsed={collapsed}/>
+          <SidebarItem items={menuItems} collapsed={collapsed} />
           <Typography
             variant="body1"
             sx={{ textAlign: "start", m: "10px", color: colors.grey[200] }}
           >
             {t("Data")}
           </Typography>
-          <SidebarItem items={dataItems} collapsed={collapsed}/>
+          <SidebarItem items={dataItems} collapsed={collapsed} />
           <Typography
             variant="body1"
             sx={{ textAlign: "start", m: "10px", color: colors.grey[200] }}
           >
             {t("Pages")}
           </Typography>
-          <SidebarItem items={pagesItems} collapsed={collapsed}/>
+          <SidebarItem items={pagesItems} collapsed={collapsed} />
 
           <Typography
             variant="body1"
@@ -169,7 +168,7 @@ export default function SidebarList(sx) {
           >
             {t("Charts")}
           </Typography>
-          <SidebarItem items={chartsItems} collapsed={collapsed}/>
+          <SidebarItem items={chartsItems} collapsed={collapsed} />
         </Box>
       </List>
     </Box>
