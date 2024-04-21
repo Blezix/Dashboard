@@ -23,7 +23,7 @@ import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import { useTranslation } from "react-i18next";
 import { tokens } from "../theme";
-
+import SidebarItem from "./SidebarItem";
 export default function SidebarList(sx) {
   const [collapsed, setCollapsed] = useState(false);
 
@@ -65,30 +65,7 @@ export default function SidebarList(sx) {
     { icon: <TimelineOutlinedIcon />, text: t("Timeline"), path: "/timeline" },
   ];
 
-  const renderItems = (items) =>
-    items.map((item) => (
-      <Link
-        to={item.path}
-        style={{ textDecoration: "none", color: colors.grey[200] }}
-      >
-        <ListItem
-          key={item.path}
-          button
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <ListItemIcon
-            sx={{ justifyContent: collapsed ? "center" : "space-between" }}
-          >
-            {item.icon}
-          </ListItemIcon>
-          {!collapsed && <ListItemText primary={item.text} />}
-        </ListItem>
-      </Link>
-    ));
+  
   return (
     <Box
       sx={{
@@ -170,21 +147,21 @@ export default function SidebarList(sx) {
           >
             Menu
           </Typography>
-          {renderItems(menuItems)}
+          <SidebarItem items={menuItems} />
           <Typography
             variant="body1"
             sx={{ textAlign: "start", m: "10px", color: colors.grey[200] }}
           >
             Data
           </Typography>
-          {renderItems(dataItems)}
+          <SidebarItem items={dataItems} />
           <Typography
             variant="body1"
             sx={{ textAlign: "start", m: "10px", color: colors.grey[200] }}
           >
             Pages
           </Typography>
-          {renderItems(pagesItems)}
+          <SidebarItem items={pagesItems} />
 
           <Typography
             variant="body1"
@@ -192,7 +169,7 @@ export default function SidebarList(sx) {
           >
             Charts
           </Typography>
-          {renderItems(chartsItems)}
+          <SidebarItem items={chartsItems} />
         </Box>
       </List>
     </Box>
