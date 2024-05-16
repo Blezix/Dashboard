@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Box, IconButton, useTheme, InputBase } from "@mui/material";
 import { tokens, ColorModeContext } from "../../theme";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
@@ -14,6 +14,10 @@ export default function Topbar(width, sx) {
   const colorMode = useContext(ColorModeContext);
   const { t, i18n } = useTranslation();
   const [language, setLanguage] = useState("en");
+
+  useEffect(() => {
+    i18n.changeLanguage(language);
+  }, [language])
 
   return (
     <Box
@@ -36,10 +40,8 @@ export default function Topbar(width, sx) {
           sx={{ fontWeight: "300", color: colors.grey[200] }}
           onClick={() => {
             if (i18n.language === "en") {
-              i18n.changeLanguage("pl");
               setLanguage("pl");
             } else {
-              i18n.changeLanguage("en");
               setLanguage("en");
             }
             console.log(i18n.language);
